@@ -1,0 +1,17 @@
+# Korean-only files (not uploaded to aws-samples)
+README-ko.md
+docs/skills/ko/
+
+# Internal working files
+resources/
+
+# Build output
+dist/
+build.sh
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# skill-creator (third-party, not included)
+.kiro/skills/skill-creator/

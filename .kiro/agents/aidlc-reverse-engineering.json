@@ -1,0 +1,39 @@
+{
+  "name": "aidlc-reverse-engineering",
+  "description": "AI-DLC Reverse Engineering agent - Analyzes existing codebase to generate business overview, architecture, code structure, API, component inventory, tech stack, dependencies, and code quality documents.",
+  "prompt": "file://./prompts/aidlc-reverse-engineering.md",
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"],
+      "env": {},
+      "disabled": false
+    },
+    "aws-knowledge-mcp-server": {
+      "url": "https://knowledge-mcp.global.api.aws",
+      "type": "http",
+      "disabled": false
+    }
+  },
+  "tools": [
+    "*"
+  ],
+  "toolAliases": {},
+  "allowedTools": [
+    "read",
+    "write",
+    "shell",
+    "grep",
+    "glob",
+    "code",
+    "@context7",
+    "@aws-knowledge-mcp-server"
+  ],
+  "resources": [
+    "file://.kiro/agents/prompts/language.md",
+    "file://.kiro/steering/aws-aidlc-rules/core-workflow.md"
+  ],
+  "toolsSettings": {},
+  "includeMcpJson": false,
+  "model": "claude-opus-4.6"
+}

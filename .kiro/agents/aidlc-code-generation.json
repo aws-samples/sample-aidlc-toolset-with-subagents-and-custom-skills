@@ -1,0 +1,39 @@
+{
+  "name": "aidlc-code-generation",
+  "description": "AI-DLC Code Generation agent - Performs per-unit code generation. Part 1 (Planning) creates a detailed plan, and Part 2 (Generation) generates code, tests, and deployment artifacts.",
+  "prompt": "file://./prompts/aidlc-code-generation.md",
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"],
+      "env": {},
+      "disabled": false
+    },
+    "aws-knowledge-mcp-server": {
+      "url": "https://knowledge-mcp.global.api.aws",
+      "type": "http",
+      "disabled": true
+    }
+  },
+  "tools": [
+    "*"
+  ],
+  "toolAliases": {},
+  "allowedTools": [
+    "read",
+    "write",
+    "shell",
+    "grep",
+    "glob",
+    "code",
+    "@context7",
+    "@aws-knowledge-mcp-server"
+  ],
+  "resources": [
+    "file://.kiro/agents/prompts/language.md",
+    "file://.kiro/steering/aws-aidlc-rules/core-workflow.md"
+  ],
+  "toolsSettings": {},
+  "includeMcpJson": false,
+  "model": "claude-opus-4.6"
+}

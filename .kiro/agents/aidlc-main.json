@@ -1,0 +1,58 @@
+{
+  "name": "aidlc-main",
+  "description": "AI-DLC workflow orchestrator - Executes the end-to-end adaptive development lifecycle with subagent delegation",
+  "prompt": "file://./prompts/aidlc-main.md",
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"],
+      "env": {},
+      "disabled": false
+    },
+    "aws-knowledge-mcp-server": {
+      "url": "https://knowledge-mcp.global.api.aws",
+      "type": "http",
+      "disabled": false
+    },
+    "tavily": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "tavily-mcp@latest"
+      ],
+      "env": {
+        "TAVILY_API_KEY": "YOUR_API_KEY",
+        "DEFAULT_PARAMETERS": "{\"include_images\": true, \"max_results\": 15, \"search_depth\": \"advanced\"}"
+      },
+      "disabled": false
+    }
+  },
+  "tools": [
+    "*"
+  ],
+  "toolAliases": {},
+  "allowedTools": [
+    "read",
+    "write",
+    "glob",
+    "grep",
+    "code",
+    "web_*",
+    "@context7",
+    "@aws-knowledge-mcp-server",
+    "@tavily"
+  ],
+  "resources": [
+    "file://.kiro/agents/prompts/language.md",
+    "file://.kiro/steering/aws-aidlc-rules/core-workflow.md",
+    "skill://.kiro/skills/*/SKILL.md"
+  ],
+  "toolsSettings": {
+    "subagent": {
+      "availableAgents": ["aidlc-reverse-engineering", "aidlc-code-generation"],
+      "trustedAgents": ["aidlc-reverse-engineering", "aidlc-code-generation"]
+    }
+  },
+  "includeMcpJson": false,
+  "model": "claude-opus-4.6"
+}
