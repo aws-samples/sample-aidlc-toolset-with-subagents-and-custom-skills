@@ -58,14 +58,15 @@ The `skill-creator` skill (used to generate new Custom Skills such as code revie
 # Clone from Anthropic's skills repository
 git clone https://github.com/anthropics/skills.git /tmp/skills
 
-# Copy skill-creator into your .kiro/skills/
-cp -r /tmp/skills/skill-creator .kiro/skills/
+# Ensure the target directory exists, then copy skill-creator into it
+mkdir -p .kiro/skills
+cp -r /tmp/skills/skills/skill-creator .kiro/skills/
 
 # Clean up
 rm -rf /tmp/skills
 ```
 
-For more information, see the [skill-creator documentation](https://github.com/anthropics/skills/tree/main/skill-creator).
+For more information, see the [skill-creator documentation](https://github.com/anthropics/skills/tree/main/skills/skill-creator).
 
 ## Custom Skills
 
