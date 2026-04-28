@@ -1,5 +1,7 @@
 # AI-DLC ToolSet with Subagents and Custom Skills
 
+> 🌏 **Translations**: [한국어 (Korean)](README-ko.md)
+
 This sample demonstrates how to configure an [AI-DLC (AI-Driven Development Life Cycle)](https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/) execution environment using a Main-Subagent architecture, MCP Server connections, and Custom Skills for team-based parallel development workflows.
 
 > **This toolset is designed for [Kiro CLI](https://kiro.dev).**
@@ -34,7 +36,8 @@ The AI-DLC ToolSet is a ready-to-use configuration that bundles:
 └── aws-aidlc-rule-details/    # Detailed rule references
 docs/
 └── skills/                    # Skill documentation
-    └── en/
+    ├── en/                    # English
+    └── ko/                    # Korean (한국어)
 ```
 
 ## Getting Started
