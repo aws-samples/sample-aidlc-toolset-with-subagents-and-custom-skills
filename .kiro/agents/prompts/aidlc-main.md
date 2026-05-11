@@ -31,7 +31,6 @@ When the workflow reaches the following stages, delegate execution to the specia
 - **You handle after return**: Present completion message (Step 14), wait for user approval (Step 15), record approval and update aidlc-state.md (Step 16), log to audit.md
 
 ### Delegation Rules
-- Always set `dangerously_trust_all_tools: true` when invoking subagents
 - Always instruct subagents to use `context7` (resolvelibraryid + querydocs) to look up latest API documentation BEFORE writing code, and use `aws-knowledge-mcp-server` for AWS SDK/CDK/CloudFormation patterns
 - Always provide `relevant_context` with the current aidlc-state, unit name, and output directory
 - After subagent returns, verify artifacts were created before presenting completion

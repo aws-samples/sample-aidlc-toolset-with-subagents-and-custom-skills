@@ -5,7 +5,7 @@
   "mcpServers": {
     "context7": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"],
+      "args": ["-y", "@upstash/context7-mcp@2.2.4", "--api-key", "YOUR_API_KEY"],
       "env": {},
       "disabled": false
     },
@@ -16,7 +16,14 @@
     }
   },
   "tools": [
-    "*"
+    "read",
+    "write",
+    "shell",
+    "grep",
+    "glob",
+    "code",
+    "@context7",
+    "@aws-knowledge-mcp-server"
   ],
   "toolAliases": {},
   "allowedTools": [

@@ -5,7 +5,7 @@
   "mcpServers": {
     "context7": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"],
+      "args": ["-y", "@upstash/context7-mcp@2.2.4", "--api-key", "YOUR_API_KEY"],
       "env": {},
       "disabled": false
     },
@@ -18,7 +18,7 @@
       "command": "npx",
       "args": [
         "-y",
-        "tavily-mcp@latest"
+        "tavily-mcp@0.2.19"
       ],
       "env": {
         "TAVILY_API_KEY": "YOUR_API_KEY",
@@ -28,7 +28,15 @@
     }
   },
   "tools": [
-    "*"
+    "read",
+    "write",
+    "glob",
+    "grep",
+    "code",
+    "web_*",
+    "@context7",
+    "@aws-knowledge-mcp-server",
+    "@tavily"
   ],
   "toolAliases": {},
   "allowedTools": [
